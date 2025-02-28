@@ -41,7 +41,6 @@ class BannerCubit extends Cubit<BannerState> {
   }
 
   void changeBanner(int activeBanner) {
-    print(activeBanner);
     emit(state.copyWith(activeBanner: activeBanner));
   }
 }
