@@ -49,11 +49,19 @@ class HomeViewState extends State<HomeView> {
                   child: SearchInputMV(placeholder: '검색어를 입력하세요'),
                 ),
                 BannerMV(),
+                const SizedBox(height: 28),
+                SectionMV(
+                  title: '제일 핫한 리뷰를 만나보세요',
+                  description: '리뷰️  랭킹⭐ top 3',
+                  children: [
+                    Text('Top Products')
+                  ],
+                ),
               ],
             ),
             SectionMV(
-              title: '제일 핫한 리뷰를 만나보세요',
-              description: '리뷰️  랭킹⭐ top 3',
+              title: '골드 계급 사용자들이예요',
+              description: '베스트 리뷰어 🏆 Top10',
               suffixIcon: Icons.chevron_right,
               children: [
                 Text('Top Users')
