@@ -61,7 +61,7 @@ class TopUserMV extends StatelessWidget {
                               top: 0,
                               left: 4,
                               child: Image.asset(
-                                'assets/images/badges/top_badge.png',
+                                'assets/images/badges/top-badge.png',
                                 width: 13,
                               ),
                             ),

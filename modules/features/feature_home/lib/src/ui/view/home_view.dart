@@ -52,7 +52,7 @@ class HomeState extends State<HomeView> {
                     Padding(
                       padding: EdgeInsets.symmetric(horizontal: 16),
                       child: ProductCardMV(
-                        imagePath: 'assets/images/products/standing_tv.png',
+                        imagePath: 'assets/images/products/standing-tv.png',
                         name: 'LG전자 스탠바이미 27ART10AKPL (스탠',
                         averageRating: 4.89,
                         totalRating: 216,
@@ -61,13 +61,13 @@ class HomeState extends State<HomeView> {
                           '스탠바이미는 사랑입니다!️',
                         ],
                         tags: ['LG전자', '편리성'],
-                        badgePath: 'assets/images/badges/top_one_badge.png',
+                        badgePath: 'assets/images/badges/top-one-badge.png',
                       ),
                     ),
                     Padding(
                       padding: EdgeInsets.symmetric(horizontal: 16),
                       child: ProductCardMV(
-                        imagePath: 'assets/images/products/4k_tv.png',
+                        imagePath: 'assets/images/products/4k-tv.png',
                         name: 'LG전자  울트라HD 75UP8300KNA (스탠드)',
                         averageRating: 4.36,
                         totalRating: 136,
@@ -76,13 +76,13 @@ class HomeState extends State<HomeView> {
                           '넷플 아마존 등 버튼하나로 바로 접속 되고디스플레이는 액정문제 없어보이고소리는 살짝 약간 감이 있으나 ^^; 시끄러울까봐 그냥 블루투스 헤드폰 구매 예정이라 문제는 없네요. 아주 만족입니다!!',
                         ],
                         tags: ['LG전자', '고화질'],
-                        badgePath: 'assets/images/badges/top_two_badge.png',
+                        badgePath: 'assets/images/badges/top-two-badge.png',
                       ),
                     ),
                     Padding(
                       padding: EdgeInsets.symmetric(horizontal: 16),
                       child: ProductCardMV(
-                        imagePath: 'assets/images/products/smart_tv.png',
+                        imagePath: 'assets/images/products/smart-tv.png',
                         name:
                         '라익미 스마트 DS4001L NETRANGE (스탠드)GX30K WIN10 (SSD 256GB)',
                         averageRating: 3.98,
@@ -93,7 +93,7 @@ class HomeState extends State<HomeView> {
                         ],
                         tags: ['라익미', '가성비'],
                         badgePath:
-                        'assets/images/badges/top_three_badge.png',
+                        'assets/images/badges/top-three-badge.png',
                       ),
                     ),
                   ],
