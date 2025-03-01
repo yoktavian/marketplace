@@ -1,1 +1,1 @@
-export './src/ui/home_page.dart';
+export 'src/ui/page/home_page.dart';

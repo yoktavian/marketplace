@@ -1,4 +1,4 @@
-import 'package:feature_home/src/ui/home_main_view.dart';
+import 'package:feature_home/src/ui/view/home_main_view.dart';
 import 'package:flutter/material.dart';
 
 class TopUserMV extends StatelessWidget {
