@@ -1,3 +1,4 @@
+import 'package:feature_home/src/ui/home_cubit.dart';
 import 'package:feature_home/src/ui/widget/company_profile_widget.dart';
 import 'package:feature_home/src/ui/widget/top_users_widget.dart';
 import 'package:flutter/material.dart';
@@ -21,12 +22,14 @@ class User {
 class HomeViewState extends State<HomeView> {
   @override
   Widget build(BuildContext context) {
-    context.read<BannerCubit>().loadBanners(assets: [
-      'images/banners/fan-banner.png',
-      'images/banners/laptop-banner.png',
-      'images/banners/food-banner.png',
-      'images/banners/software-banner.png',
-    ]);
+    context.read<BannerCubit>().loadBanners(
+      assets: [
+        'images/banners/fan-banner.png',
+        'images/banners/laptop-banner.png',
+        'images/banners/food-banner.png',
+        'images/banners/software-banner.png',
+      ],
+    );
 
     final top10Users = [
       User(name: 'Name01', avatarPath: 'assets/images/cats/cat-1.png'),
@@ -81,8 +84,7 @@ class HomeViewState extends State<HomeView> {
                         Padding(
                           padding: EdgeInsets.symmetric(horizontal: 16),
                           child: ProductCardMV(
-                            imagePath:
-                            'assets/images/products/standing_tv.png',
+                            imagePath: 'assets/images/products/standing_tv.png',
                             name: 'LG전자 스탠바이미 27ART10AKPL (스탠',
                             averageRating: 4.89,
                             totalRating: 216,
@@ -91,8 +93,7 @@ class HomeViewState extends State<HomeView> {
                               '스탠바이미는 사랑입니다!️',
                             ],
                             tags: ['LG전자', '편리성'],
-                            badgePath:
-                            'assets/images/badges/top_one_badge.png',
+                            badgePath: 'assets/images/badges/top_one_badge.png',
                           ),
                         ),
                         Padding(
@@ -107,8 +108,7 @@ class HomeViewState extends State<HomeView> {
                               '넷플 아마존 등 버튼하나로 바로 접속 되고디스플레이는 액정문제 없어보이고소리는 살짝 약간 감이 있으나 ^^; 시끄러울까봐 그냥 블루투스 헤드폰 구매 예정이라 문제는 없네요. 아주 만족입니다!!',
                             ],
                             tags: ['LG전자', '고화질'],
-                            badgePath:
-                            'assets/images/badges/top_two_badge.png',
+                            badgePath: 'assets/images/badges/top_two_badge.png',
                           ),
                         ),
                         Padding(
@@ -116,7 +116,7 @@ class HomeViewState extends State<HomeView> {
                           child: ProductCardMV(
                             imagePath: 'assets/images/products/smart_tv.png',
                             name:
-                            '라익미 스마트 DS4001L NETRANGE (스탠드)GX30K WIN10 (SSD 256GB)',
+                                '라익미 스마트 DS4001L NETRANGE (스탠드)GX30K WIN10 (SSD 256GB)',
                             averageRating: 3.98,
                             totalRating: 98,
                             reviews: [
@@ -125,7 +125,7 @@ class HomeViewState extends State<HomeView> {
                             ],
                             tags: ['라익미', '가성비'],
                             badgePath:
-                            'assets/images/badges/top_three_badge.png',
+                                'assets/images/badges/top_three_badge.png',
                           ),
                         ),
                       ],
@@ -163,28 +163,54 @@ class HomeViewState extends State<HomeView> {
           ],
         ),
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: Colors.white,
-        currentIndex: 0,
-        type: BottomNavigationBarType.fixed,
-        items: <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Image.asset('assets/images/navbars/home.png'),
-            label: '홈',
-          ),
-          BottomNavigationBarItem(
-            icon: Image.asset('assets/images/navbars/category.png'),
-            label: '카테고리',
-          ),
-          BottomNavigationBarItem(
-            icon: Image.asset('assets/images/navbars/community.png'),
-            label: '커뮤니티',
-          ),
-          BottomNavigationBarItem(
-            icon: Image.asset('assets/images/navbars/profile.png'),
-            label: '마이페이지',
-          ),
-        ],
+      bottomNavigationBar: BlocBuilder<HomeCubit, HomeState>(
+        buildWhen: (previous, current) {
+          return previous.activePage != current.activePage;
+        },
+        builder: (ctx, s) {
+          const selectedColor = Color(0xFF767D88);
+          const selectedTextColor = Color(0xFF1D1D1D);
+          const unselectedColor = Color(0xFFD9D9D9);
+
+          return BottomNavigationBar(
+            backgroundColor: Colors.white,
+            currentIndex: s.activePage,
+            onTap: ctx.read<HomeCubit>().changePage,
+            type: BottomNavigationBarType.fixed,
+            selectedItemColor: selectedTextColor,
+            unselectedItemColor: unselectedColor,
+            items: <BottomNavigationBarItem>[
+              BottomNavigationBarItem(
+                icon: Image.asset(
+                  'assets/images/navbars/home.png',
+                  color: s.activePage == 0 ? selectedColor : unselectedColor,
+                ),
+                label: '홈',
+              ),
+              BottomNavigationBarItem(
+                icon: Image.asset(
+                  'assets/images/navbars/category.png',
+                  color: s.activePage == 1 ? selectedColor : unselectedColor,
+                ),
+                label: '카테고리',
+              ),
+              BottomNavigationBarItem(
+                icon: Image.asset(
+                  'assets/images/navbars/community.png',
+                  color: s.activePage == 2 ? selectedColor : unselectedColor,
+                ),
+                label: '커뮤니티',
+              ),
+              BottomNavigationBarItem(
+                icon: Image.asset(
+                  'assets/images/navbars/profile.png',
+                  color: s.activePage == 3 ? selectedColor : unselectedColor,
+                ),
+                label: '마이페이지',
+              ),
+            ],
+          );
+        },
       ),
     );
   }
