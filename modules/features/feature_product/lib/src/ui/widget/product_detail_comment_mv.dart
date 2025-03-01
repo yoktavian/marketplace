@@ -2,8 +2,13 @@ import 'package:flutter/material.dart';
 
 class ProductDetailCommentMV extends StatelessWidget {
   final String name;
+  final String avatar;
 
-  const ProductDetailCommentMV({required this.name, super.key});
+  const ProductDetailCommentMV({
+    required this.name,
+    required this.avatar,
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -165,7 +170,7 @@ class ProductDetailCommentMV extends StatelessWidget {
       children: [
         ClipOval(
           child: Image.asset(
-            'assets/images/cats/cat-1.png',
+            avatar,
             width: 34,
           ),
         ),

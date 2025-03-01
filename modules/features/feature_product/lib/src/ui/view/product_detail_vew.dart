@@ -1,6 +1,8 @@
+import 'package:feature_product/src/ui/cubit/product_detail_cubit.dart';
 import 'package:feature_product/src/ui/widget/product_detail_comment_mv.dart';
 import 'package:feature_product/src/ui/widget/product_detail_header_mv.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 
 class ProductDetailView extends StatefulWidget {
@@ -47,16 +49,23 @@ class ProductDetailState extends State<ProductDetailView> {
         ),
       ),
       body: SafeArea(
-        child: ListView(
-          children: [
-            ProductDetailHeaderMV(
-              avatar: 'assets/images/cats/cat-1.png',
-              name: 'Name01',
-              order: 1,
-            ),
-            const SizedBox(height: 14),
-            ProductDetailCommentMV(name: 'Name01'),
-          ],
+        child: BlocBuilder<ProductDetailCubit, ProductDetailCubitState>(
+          builder: (context, state) {
+            return ListView(
+              children: [
+                ProductDetailHeaderMV(
+                  name: state.name,
+                  avatar: state.avatar,
+                  order: 1,
+                ),
+                const SizedBox(height: 14),
+                ProductDetailCommentMV(
+                  name: state.name,
+                  avatar: state.avatar,
+                ),
+              ],
+            );
+          },
         ),
       ),
     );
