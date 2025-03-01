@@ -15,13 +15,6 @@ class HomeMainView extends StatefulWidget {
   State<StatefulWidget> createState() => HomeMainViewState();
 }
 
-class User {
-  final String name;
-  final String avatarPath;
-
-  User({required this.name, required this.avatarPath});
-}
-
 class HomeMainViewState extends State<HomeMainView> {
   @override
   Widget build(BuildContext context) {

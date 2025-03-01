@@ -1,4 +1,4 @@
-import 'package:feature_home/src/ui/view/home_main_view.dart';
+import 'package:feature_home/src/entity/user.dart';
 import 'package:feature_home/src/ui/widget/company_profile_mv.dart';
 import 'package:feature_home/src/ui/widget/top_users_mv.dart';
 import 'package:flutter/material.dart';
