@@ -100,12 +100,13 @@ class HomeState extends State<HomeView> {
             builder: (context, state) {
               return TopUserMV(
                 users: state.top10Users,
-                onUserSelected: (user) {
+                onUserSelected: (user, order) {
                   context.push(
                     '/product-detail',
                     extra: {
                       'name': user.name,
                       'avatar': user.avatarPath,
+                      'order': order,
                     },
                   );
                 },

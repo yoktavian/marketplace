@@ -25,12 +25,16 @@ class ProductDetailState extends State<ProductDetailView> {
         title: Column(
           children: [
             // order
-            Text(
-              '랭킹 1위',
-              style: TextStyle(
-                fontSize: 10,
-                color: Color(0xFF868686),
-              ),
+            BlocBuilder<ProductDetailCubit, ProductDetailCubitState>(
+              builder: (context, state) {
+                return Text(
+                  '랭킹 ${state.order}위',
+                  style: TextStyle(
+                    fontSize: 10,
+                    color: Color(0xFF868686),
+                  ),
+                );
+              },
             ),
             Text(
               '베스트 리뷰어',

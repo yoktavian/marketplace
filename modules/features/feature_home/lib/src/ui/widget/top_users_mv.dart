@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 class TopUserMV extends StatelessWidget {
   final List<User> users;
-  final Function(User user)? onUserSelected;
+  final Function(User user, int order)? onUserSelected;
 
   const TopUserMV({required this.users, this.onUserSelected, super.key});
 
@@ -28,7 +28,7 @@ class TopUserMV extends StatelessWidget {
                 color: Colors.transparent,
                 child: InkWell(
                   onTap: onUserSelected != null
-                      ? () => onUserSelected?.call(user)
+                      ? () => onUserSelected?.call(user, index + 1)
                       : null,
                   child: Column(
                     spacing: 8,
@@ -87,7 +87,7 @@ class TopUserMV extends StatelessWidget {
               color: Colors.transparent,
               child: InkWell(
                 onTap: onUserSelected != null
-                    ? () => onUserSelected?.call(user)
+                    ? () => onUserSelected?.call(user, index + 1)
                     : null,
                 child: Column(
                   children: [
