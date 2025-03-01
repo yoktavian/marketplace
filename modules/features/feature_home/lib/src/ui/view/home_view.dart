@@ -2,6 +2,7 @@ import 'package:feature_home/src/entity/user.dart';
 import 'package:feature_home/src/ui/widget/company_profile_mv.dart';
 import 'package:feature_home/src/ui/widget/top_users_mv.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:shared_ui/main.dart';
 
 class HomeView extends StatefulWidget {
@@ -110,7 +111,7 @@ class HomeState extends State<HomeView> {
           child: TopUserMV(
             users: top10Users,
             onUserSelected: (user) {
-              print(user.name);
+              context.go('/product-detail');
             },
           ),
         ),
