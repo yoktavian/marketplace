@@ -33,6 +33,11 @@ class HomeViewState extends State<HomeView> {
       User(name: 'Name03', avatarPath: 'assets/images/cats/cat-3.png'),
       User(name: 'Name04', avatarPath: 'assets/images/cats/cat-4.png'),
       User(name: 'Name05', avatarPath: 'assets/images/cats/cat-5.png'),
+      User(name: 'Name06', avatarPath: 'assets/images/cats/cat-6.png'),
+      User(name: 'Name07', avatarPath: 'assets/images/cats/cat-7.png'),
+      User(name: 'Name08', avatarPath: 'assets/images/cats/cat-8.png'),
+      User(name: 'Name09', avatarPath: 'assets/images/cats/cat-9.png'),
+      User(name: 'Name10', avatarPath: 'assets/images/cats/cat-10.png'),
     ];
 
     return Scaffold(
@@ -133,7 +138,12 @@ class HomeViewState extends State<HomeView> {
               title: '골드 계급 사용자들이예요',
               description: '베스트 리뷰어 🏆 Top10',
               suffixIcon: Icons.chevron_right,
-              child: TopUserWidget(users: top10Users),
+              child: TopUserWidget(
+                users: top10Users,
+                onUserSelected: (user) {
+                  print(user.name);
+                },
+              ),
             )
           ],
         ),
