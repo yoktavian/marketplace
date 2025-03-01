@@ -1,6 +1,6 @@
 import 'package:feature_home/src/ui/home_cubit.dart';
-import 'package:feature_home/src/ui/widget/company_profile_widget.dart';
-import 'package:feature_home/src/ui/widget/top_users_widget.dart';
+import 'package:feature_home/src/ui/widget/company_profile_mv.dart';
+import 'package:feature_home/src/ui/widget/top_users_mv.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shared_ui/main.dart';
@@ -140,7 +140,7 @@ class HomeViewState extends State<HomeView> {
               title: '골드 계급 사용자들이예요',
               description: '베스트 리뷰어 🏆 Top10',
               suffixIcon: Icons.chevron_right,
-              child: TopUserWidget(
+              child: TopUserMV(
                 users: top10Users,
                 onUserSelected: (user) {
                   print(user.name);
@@ -148,7 +148,7 @@ class HomeViewState extends State<HomeView> {
               ),
             ),
             const SizedBox(height: 20),
-            CompanyProfileWidget(
+            CompanyProfileMV(
               logo: 'LOGO Inc.',
               contact: 'review@logo.com',
               language: 'KOR',

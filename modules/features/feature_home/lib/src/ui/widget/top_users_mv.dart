@@ -1,11 +1,11 @@
 import 'package:feature_home/src/ui/home_view.dart';
 import 'package:flutter/material.dart';
 
-class TopUserWidget extends StatelessWidget {
+class TopUserMV extends StatelessWidget {
   final List<User> users;
   final Function(User user)? onUserSelected;
 
-  const TopUserWidget({required this.users, this.onUserSelected, super.key});
+  const TopUserMV({required this.users, this.onUserSelected, super.key});
 
   @override
   Widget build(BuildContext context) {

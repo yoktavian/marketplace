@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class CompanyProfileWidget extends StatelessWidget {
+class CompanyProfileMV extends StatelessWidget {
   final String logo;
   final String contact;
   final String language;
   final String additionalInfo;
   final List<String> menus;
 
-  const CompanyProfileWidget({
+  const CompanyProfileMV({
     required this.logo,
     required this.contact,
     required this.language,
