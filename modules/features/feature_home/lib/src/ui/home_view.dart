@@ -10,17 +10,14 @@ class HomeView extends StatefulWidget {
 }
 
 class HomeViewState extends State<HomeView> {
-
   @override
   Widget build(BuildContext context) {
-    context.read<BannerCubit>().loadBanners(
-      assets: [
-        'images/banners/fan-banner.png',
-        'images/banners/laptop-banner.png',
-        'images/banners/food-banner.png',
-        'images/banners/software-banner.png',
-      ]
-    );
+    context.read<BannerCubit>().loadBanners(assets: [
+      'images/banners/fan-banner.png',
+      'images/banners/laptop-banner.png',
+      'images/banners/food-banner.png',
+      'images/banners/software-banner.png',
+    ]);
 
     return Scaffold(
       backgroundColor: Color(0xFFeeeeee),
@@ -39,20 +36,29 @@ class HomeViewState extends State<HomeView> {
       ),
       body: SafeArea(
         child: Column(
+          spacing: 14,
           children: [
-            Container(
-              color: Colors.white,
-              child: Column(
-                spacing: 2,
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 24),
-                    child: SearchInputMV(placeholder: '검색어를 입력하세요'),
+            SectionMV(
+              suffixIcon: Icons.chevron_right,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 16,
+                    vertical: 24,
                   ),
-                  BannerMV(),
-                ],
-              ),
+                  child: SearchInputMV(placeholder: '검색어를 입력하세요'),
+                ),
+                BannerMV(),
+              ],
             ),
+            SectionMV(
+              title: '제일 핫한 리뷰를 만나보세요',
+              description: '리뷰️  랭킹⭐ top 3',
+              suffixIcon: Icons.chevron_right,
+              children: [
+                Text('Top Users')
+              ],
+            )
           ],
         ),
       ),
