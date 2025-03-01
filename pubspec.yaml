@@ -26,4 +26,5 @@ flutter:
     - assets/images/banners/
     - assets/images/badges/
     - assets/images/products/
+    - assets/images/cats/
   uses-material-design: true

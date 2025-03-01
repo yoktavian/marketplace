@@ -45,6 +45,7 @@ class SectionMV extends StatelessWidget {
                             description ?? '',
                             style: TextStyle(
                               fontSize: 18,
+                              fontWeight: FontWeight.w500,
                               color: Colors.black,
                             ),
                           ),
