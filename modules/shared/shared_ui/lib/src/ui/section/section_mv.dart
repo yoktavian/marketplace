@@ -4,11 +4,11 @@ class SectionMV extends StatelessWidget {
   final String? title;
   final String? description;
   final IconData? suffixIcon;
-  final List<Widget> children;
+  final Widget child;
 
   const SectionMV({
     super.key,
-    required this.children,
+    required this.child,
     this.title,
     this.description,
     this.suffixIcon,
@@ -55,7 +55,7 @@ class SectionMV extends StatelessWidget {
                 ],
               ),
             ),
-          ...children,
+          child,
         ],
       ),
     );
