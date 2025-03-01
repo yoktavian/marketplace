@@ -5,7 +5,7 @@ class TopUserWidget extends StatelessWidget {
   final List<User> users;
   final Function(User user)? onUserSelected;
 
-  const TopUserWidget({ required this.users, this.onUserSelected, super.key });
+  const TopUserWidget({required this.users, this.onUserSelected, super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -25,8 +25,11 @@ class TopUserWidget extends StatelessWidget {
               width: 62,
               margin: EdgeInsets.only(left: 16),
               child: Material(
+                color: Colors.transparent,
                 child: InkWell(
-                  onTap: () => onUserSelected?.call(user),
+                  onTap: onUserSelected != null
+                      ? () => onUserSelected?.call(user)
+                      : null,
                   child: Column(
                     spacing: 8,
                     children: [
@@ -80,29 +83,37 @@ class TopUserWidget extends StatelessWidget {
 
           return Container(
             margin: EdgeInsets.only(right: index == users.length - 1 ? 16 : 0),
-            child: Column(
-              children: [
-                const SizedBox(height: 12),
-                SizedBox(
-                  height: 62,
-                  child: ClipOval(
-                    child: Image.asset(
-                      user.avatarPath,
-                      fit: BoxFit.cover,
-                      width: 58, // Use fixed width here
-                      height: 58, // Use fixed height here
+            child: Material(
+              color: Colors.transparent,
+              child: InkWell(
+                onTap: onUserSelected != null
+                    ? () => onUserSelected?.call(user)
+                    : null,
+                child: Column(
+                  children: [
+                    const SizedBox(height: 12),
+                    SizedBox(
+                      height: 62,
+                      child: ClipOval(
+                        child: Image.asset(
+                          user.avatarPath,
+                          fit: BoxFit.cover,
+                          width: 58, // Use fixed width here
+                          height: 58, // Use fixed height here
+                        ),
+                      ),
                     ),
-                  ),
+                    const SizedBox(height: 6),
+                    Text(
+                      user.name,
+                      style: TextStyle(
+                        color: Color(0xFF616161),
+                        fontSize: 14,
+                      ),
+                    ),
+                  ],
                 ),
-                const SizedBox(height: 6),
-                Text(
-                  user.name,
-                  style: TextStyle(
-                    color: Color(0xFF616161),
-                    fontSize: 14,
-                  ),
-                ),
-              ],
+              ),
             ),
           );
         },
