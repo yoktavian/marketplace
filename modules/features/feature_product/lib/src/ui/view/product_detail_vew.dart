@@ -1,3 +1,4 @@
+import 'package:feature_product/src/ui/widget/product_detail_header_mv.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -47,55 +48,10 @@ class ProductDetailState extends State<ProductDetailView> {
       body: SafeArea(
         child: Column(
           children: [
-            Container(
-              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 24),
-              color: Colors.white,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  ClipOval(
-                    child: Image.asset(
-                      'assets/images/cats/cat-1.png',
-                      width: 120,
-                    ),
-                  ),
-                  const SizedBox(height: 12),
-                  Text(
-                    'Name01',
-                    style: TextStyle(
-                      fontWeight: FontWeight.w500,
-                      fontSize: 20,
-                    ),
-                  ),
-                  const SizedBox(height: 2),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    spacing: 5,
-                    children: [
-                      Image.asset(
-                        'assets/images/badges/top-badge.png',
-                        width: 19,
-                      ),
-                      Text(
-                        '골드',
-                        style: TextStyle(
-                          color: Color(0xFFFFD233),
-                          fontWeight: FontWeight.w500,
-                        ),
-                      )
-                    ],
-                  ),
-                  const SizedBox(height: 18),
-                  Container(
-                    padding: EdgeInsets.symmetric(horizontal: 12, vertical: 8),
-                    decoration: BoxDecoration(
-                      color: Color(0xFFF0F0F0),
-                      borderRadius: BorderRadius.all(Radius.circular(6)),
-                    ),
-                    child: Text('조립컴 업체를 운영하며 리뷰를 작성합니다.'),
-                  ),
-                ],
-              ),
+            ProductDetailHeaderMV(
+              avatar: 'assets/images/cats/cat-1.png',
+              name: 'Name01',
+              order: 1,
             ),
             Row(
               children: [
