@@ -1,19 +1,19 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class HomeState {
+class HomeMainCubitState {
   final int activePage;
 
-  HomeState({ this.activePage = 0 });
+  HomeMainCubitState({ this.activePage = 0 });
 
-  HomeState copyWith({ int? activePage }) {
-    return HomeState(
+  HomeMainCubitState copyWith({ int? activePage }) {
+    return HomeMainCubitState(
       activePage: activePage ?? this.activePage,
     );
   }
 }
 
-class HomeCubit extends Cubit<HomeState> {
-  HomeCubit(super.initialState);
+class HomeMainCubit extends Cubit<HomeMainCubitState> {
+  HomeMainCubit(super.initialState);
 
   void changePage(int index) {
     if (index == state.activePage) return;
