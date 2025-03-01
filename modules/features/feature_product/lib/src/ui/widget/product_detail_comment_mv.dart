@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
 class ProductDetailCommentMV extends StatelessWidget {
-  const ProductDetailCommentMV({super.key});
+  final String name;
+
+  const ProductDetailCommentMV({required this.name, super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -38,8 +40,11 @@ class ProductDetailCommentMV extends StatelessWidget {
                 Container(
                   padding: EdgeInsets.symmetric(horizontal: 7, vertical: 3),
                   decoration: BoxDecoration(
-                      border: Border.all(color: Color(0xFF868686)),
-                      borderRadius: BorderRadius.all(Radius.circular(33))),
+                    border: Border.all(color: Color(0xFF868686)),
+                    borderRadius: BorderRadius.all(
+                      Radius.circular(33),
+                    ),
+                  ),
                   child: Row(
                     spacing: 16,
                     children: [
@@ -95,7 +100,8 @@ class ProductDetailCommentMV extends StatelessWidget {
                                 return Icon(
                                   Icons.star,
                                   color: Color(
-                                      index < 4 ? 0xFFFFD233 : 0xFFF0F0F0),
+                                    index < 4 ? 0xFFFFD233 : 0xFFF0F0F0,
+                                  ),
                                   size: 21,
                                 );
                               },
@@ -168,7 +174,7 @@ class ProductDetailCommentMV extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                'Name01',
+                name,
                 style: TextStyle(fontWeight: FontWeight.w500),
               ),
               Row(

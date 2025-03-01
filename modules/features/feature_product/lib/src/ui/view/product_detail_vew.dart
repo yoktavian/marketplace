@@ -55,7 +55,7 @@ class ProductDetailState extends State<ProductDetailView> {
               order: 1,
             ),
             const SizedBox(height: 14),
-            ProductDetailCommentMV(),
+            ProductDetailCommentMV(name: 'Name01'),
           ],
         ),
       ),
