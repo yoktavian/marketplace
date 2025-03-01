@@ -122,7 +122,19 @@ class HomeViewState extends State<HomeView> {
               title: '골드 계급 사용자들이예요',
               description: '베스트 리뷰어 🏆 Top10',
               suffixIcon: Icons.chevron_right,
-              child: Text('Top Users'),
+              child: SizedBox(
+                width: double.infinity,
+                height: 114,
+                child: ListView(
+                  scrollDirection: Axis.horizontal,
+                  children: [
+                    Container(
+                      margin: EdgeInsets.only(left: 16),
+                      child: Text('cat-1'),
+                    ),
+                  ],
+                ),
+              ),
             )
           ],
         ),
