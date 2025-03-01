@@ -1,17 +1,17 @@
-import 'package:feature_home/src/ui/home_view.dart';
+import 'package:feature_home/src/entity/user.dart';
 import 'package:flutter/material.dart';
 
-class TopUserWidget extends StatelessWidget {
+class TopUserMV extends StatelessWidget {
   final List<User> users;
   final Function(User user)? onUserSelected;
 
-  const TopUserWidget({required this.users, this.onUserSelected, super.key});
+  const TopUserMV({required this.users, this.onUserSelected, super.key});
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
       width: double.infinity,
-      height: 106,
+      height: 114,
       child: ListView.separated(
         scrollDirection: Axis.horizontal,
         separatorBuilder: (context, index) {

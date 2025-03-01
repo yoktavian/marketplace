@@ -14,6 +14,9 @@ dependencies:
   flutter_bloc: ^9.0.0
   feature_home:
     path: ./modules/features/feature_home
+  feature_product:
+    path: ./modules/features/feature_product
+  go_router: ^14.8.1
 
 dev_dependencies:
   flutter_test:
@@ -27,4 +30,5 @@ flutter:
     - assets/images/badges/
     - assets/images/products/
     - assets/images/cats/
+    - assets/images/navbars/
   uses-material-design: true
