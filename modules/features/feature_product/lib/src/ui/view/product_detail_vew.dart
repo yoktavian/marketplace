@@ -1,3 +1,4 @@
+import 'package:feature_product/src/ui/widget/product_detail_comment_mv.dart';
 import 'package:feature_product/src/ui/widget/product_detail_header_mv.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
@@ -46,19 +47,15 @@ class ProductDetailState extends State<ProductDetailView> {
         ),
       ),
       body: SafeArea(
-        child: Column(
+        child: ListView(
           children: [
             ProductDetailHeaderMV(
               avatar: 'assets/images/cats/cat-1.png',
               name: 'Name01',
               order: 1,
             ),
-            Row(
-              children: [
-                Image.asset('assets/images/products/comment.png', width: 12),
-                Text('댓글 달기..'),
-              ],
-            ),
+            const SizedBox(height: 14),
+            ProductDetailCommentMV(),
           ],
         ),
       ),
