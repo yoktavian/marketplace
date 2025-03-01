@@ -111,7 +111,13 @@ class HomeState extends State<HomeView> {
           child: TopUserMV(
             users: top10Users,
             onUserSelected: (user) {
-              context.push('/product-detail');
+              context.push(
+                '/product-detail',
+                extra: {
+                  'name': user.name,
+                  'avatar': user.avatarPath,
+                },
+              );
             },
           ),
         ),
