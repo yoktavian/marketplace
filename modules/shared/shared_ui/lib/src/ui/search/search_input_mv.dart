@@ -16,6 +16,7 @@ class SearchInputMVState extends State<SearchInputMV> {
   @override
   Widget build(BuildContext context) {
     return Container(
+      height: 36,
       padding: EdgeInsets.all(2),
       decoration: BoxDecoration(
         borderRadius: const BorderRadius.all(Radius.circular(10)),
@@ -30,7 +31,11 @@ class SearchInputMVState extends State<SearchInputMV> {
         ),
       ),
       child: TextField(
+        cursorHeight: 12,
+        textAlignVertical: TextAlignVertical.center,
+        style: TextStyle(fontSize: 12),
         decoration: InputDecoration(
+          contentPadding: EdgeInsets.symmetric(vertical: 0, horizontal: 12),
           hintText: widget.placeholder,
           hintStyle: TextStyle(color: Color(0xFF868686), fontSize: 12),
           filled: true,
