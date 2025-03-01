@@ -1,7 +1,9 @@
 import 'package:feature_home/src/entity/user.dart';
+import 'package:feature_home/src/ui/cubit/home_cubit.dart';
 import 'package:feature_home/src/ui/widget/company_profile_mv.dart';
 import 'package:feature_home/src/ui/widget/top_users_mv.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:shared_ui/main.dart';
 
@@ -15,19 +17,6 @@ class HomeView extends StatefulWidget {
 class HomeState extends State<HomeView> {
   @override
   Widget build(BuildContext context) {
-    final top10Users = [
-      User(name: 'Name01', avatarPath: 'assets/images/cats/cat-1.png'),
-      User(name: 'Name02', avatarPath: 'assets/images/cats/cat-2.png'),
-      User(name: 'Name03', avatarPath: 'assets/images/cats/cat-3.png'),
-      User(name: 'Name04', avatarPath: 'assets/images/cats/cat-4.png'),
-      User(name: 'Name05', avatarPath: 'assets/images/cats/cat-5.png'),
-      User(name: 'Name06', avatarPath: 'assets/images/cats/cat-6.png'),
-      User(name: 'Name07', avatarPath: 'assets/images/cats/cat-7.png'),
-      User(name: 'Name08', avatarPath: 'assets/images/cats/cat-8.png'),
-      User(name: 'Name09', avatarPath: 'assets/images/cats/cat-9.png'),
-      User(name: 'Name10', avatarPath: 'assets/images/cats/cat-10.png'),
-    ];
-
     return ListView(
       children: [
         SectionMV(
@@ -84,7 +73,7 @@ class HomeState extends State<HomeView> {
                       child: ProductCardMV(
                         imagePath: 'assets/images/products/smart-tv.png',
                         name:
-                        '라익미 스마트 DS4001L NETRANGE (스탠드)GX30K WIN10 (SSD 256GB)',
+                            '라익미 스마트 DS4001L NETRANGE (스탠드)GX30K WIN10 (SSD 256GB)',
                         averageRating: 3.98,
                         totalRating: 98,
                         reviews: [
@@ -92,8 +81,7 @@ class HomeState extends State<HomeView> {
                           '중소기업TV 라익미 제품을 사용해보았는데 뛰어난 가성비와 더불어 OTT 서비스에 오픈 브라우저 까지 너무 마음에 들게끔 기능들을 사용 가능했고',
                         ],
                         tags: ['라익미', '가성비'],
-                        badgePath:
-                        'assets/images/badges/top-three-badge.png',
+                        badgePath: 'assets/images/badges/top-three-badge.png',
                       ),
                     ),
                   ],
@@ -108,14 +96,18 @@ class HomeState extends State<HomeView> {
           title: '골드 계급 사용자들이예요',
           description: '베스트 리뷰어 🏆 Top10',
           suffixIcon: Icons.chevron_right,
-          child: TopUserMV(
-            users: top10Users,
-            onUserSelected: (user) {
-              context.push(
-                '/product-detail',
-                extra: {
-                  'name': user.name,
-                  'avatar': user.avatarPath,
+          child: BlocBuilder<HomeCubit, HomeCubitState>(
+            builder: (context, state) {
+              return TopUserMV(
+                users: state.top10Users,
+                onUserSelected: (user) {
+                  context.push(
+                    '/product-detail',
+                    extra: {
+                      'name': user.name,
+                      'avatar': user.avatarPath,
+                    },
+                  );
                 },
               );
             },

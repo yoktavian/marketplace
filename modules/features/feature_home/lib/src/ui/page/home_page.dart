@@ -1,3 +1,4 @@
+import 'package:feature_home/src/ui/cubit/home_cubit.dart';
 import 'package:feature_home/src/ui/cubit/home_main_cubit.dart';
 import 'package:feature_home/src/ui/view/home_main_view.dart';
 import 'package:flutter/widgets.dart';
@@ -16,6 +17,9 @@ class HomePage extends StatelessWidget {
         ),
         BlocProvider(
           create: (_) => HomeMainCubit(HomeMainCubitState()),
+        ),
+        BlocProvider(
+          create: (_) => HomeCubit(HomeCubitState()),
         ),
       ],
       child: HomeMainView(),
