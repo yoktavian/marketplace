@@ -11,7 +11,7 @@ class TopUserWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       width: double.infinity,
-      height: 106,
+      height: 114,
       child: ListView.separated(
         scrollDirection: Axis.horizontal,
         separatorBuilder: (context, index) {
