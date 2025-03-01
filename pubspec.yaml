@@ -24,6 +24,6 @@ dev_dependencies:
 flutter:
   assets:
     - assets/images/banners/
-    - assets/images/banners/
+    - assets/images/badges/
     - assets/images/products/
   uses-material-design: true
