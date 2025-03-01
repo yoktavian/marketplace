@@ -23,6 +23,7 @@ class HomeViewState extends State<HomeView> {
     );
 
     return Scaffold(
+      backgroundColor: Color(0xFFeeeeee),
       appBar: AppBar(
         centerTitle: false,
         title: Text(
@@ -34,12 +35,24 @@ class HomeViewState extends State<HomeView> {
         ),
         backgroundColor: Colors.white,
         shadowColor: Colors.grey,
-        elevation: 0.1,
+        elevation: 0.4,
       ),
       body: SafeArea(
         child: Column(
           children: [
-            BannerMV(),
+            Container(
+              color: Colors.white,
+              child: Column(
+                spacing: 2,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 24),
+                    child: SearchInputMV(placeholder: '검색어를 입력하세요'),
+                  ),
+                  BannerMV(),
+                ],
+              ),
+            ),
           ],
         ),
       ),
