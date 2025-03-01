@@ -14,6 +14,7 @@ dependencies:
   flutter_bloc: ^9.0.0
   feature_home:
     path: ./modules/features/feature_home
+  go_router: ^14.8.1
 
 dev_dependencies:
   flutter_test:
