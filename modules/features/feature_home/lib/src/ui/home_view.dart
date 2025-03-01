@@ -163,6 +163,29 @@ class HomeViewState extends State<HomeView> {
           ],
         ),
       ),
+      bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: Colors.white,
+        currentIndex: 0,
+        type: BottomNavigationBarType.fixed,
+        items: <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            icon: Image.asset('assets/images/navbars/home.png'),
+            label: '홈',
+          ),
+          BottomNavigationBarItem(
+            icon: Image.asset('assets/images/navbars/category.png'),
+            label: '카테고리',
+          ),
+          BottomNavigationBarItem(
+            icon: Image.asset('assets/images/navbars/community.png'),
+            label: '커뮤니티',
+          ),
+          BottomNavigationBarItem(
+            icon: Image.asset('assets/images/navbars/profile.png'),
+            label: '마이페이지',
+          ),
+        ],
+      ),
     );
   }
 }
