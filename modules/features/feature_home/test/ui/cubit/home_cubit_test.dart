@@ -7,7 +7,7 @@ void main() {
     'Home Cubit Test Cases',
     () {
       test(
-        'When cubit created with certain state, state should contain correct values',
+        'When cubit created, the state should use initial state value',
         () {
           final users = List.generate(
             2,
