@@ -152,7 +152,7 @@ class ProductDetailCommentMV extends StatelessWidget {
           spacing: 4,
           children: [
             Image.asset(
-              'assets/images/products/comment.png',
+              'assets/images/navbars/comment.png',
               width: 12,
               color: Colors.grey,
             ),
