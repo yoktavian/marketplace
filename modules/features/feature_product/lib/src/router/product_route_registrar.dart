@@ -6,7 +6,11 @@ class ProductRouteRegistrar {
     GoRoute(
       path: '/product-detail',
       builder: (context, state) {
-        return ProductDetailPage();
+        final extraData = state.extra as Map<String, dynamic>;
+
+        return ProductDetailPage(
+          extraData: extraData,
+        );
       },
     ),
   ];

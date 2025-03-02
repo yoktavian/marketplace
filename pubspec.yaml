@@ -17,6 +17,7 @@ dependencies:
   feature_product:
     path: ./modules/features/feature_product
   go_router: ^14.8.1
+  melos: ^6.3.2
 
 dev_dependencies:
   flutter_test:

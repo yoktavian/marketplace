@@ -7,6 +7,7 @@ class MarketplaceApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
+      key: const Key('router-app'),
       routerConfig: AppRouteRegistrar.routes,
     );
   }

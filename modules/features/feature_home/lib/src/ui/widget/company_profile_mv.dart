@@ -68,6 +68,7 @@ class CompanyProfileMV extends StatelessWidget {
             children: [
               Expanded(
                 child: Row(
+                  spacing: 2,
                   children: [
                     Icon(
                       Icons.send,
